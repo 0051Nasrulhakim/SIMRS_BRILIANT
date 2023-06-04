@@ -1,0 +1,115 @@
+body {
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+.navbar {
+  background-color: #316B83;
+  width: 100%;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 1%;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom-right-radius: 42px;
+}
+.navbar .content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .content .jam {
+  width: 13%;
+}
+.navbar .content .jam .jam-digital {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.navbar .content .jam .jam-digital .hari {
+  margin-right: 5%;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+.main .sidebar {
+  background-color: #0f1f25;
+  width: 17%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  color: #ffffff;
+}
+.main .sidebar .appname {
+  text-align: center;
+  margin-top: 6%;
+}
+.main .sidebar .content {
+  font-weight: bold;
+  margin-top: 5%;
+  margin-left: 6%;
+}
+.main .sidebar .content ul {
+  list-style: none;
+}
+.main .sidebar .content ul li {
+  margin-left: -5%;
+  margin-bottom: 4%;
+}
+.main .sidebar .content ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.main .section {
+  width: 83%;
+}
+.main .section .breadcum {
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+}
+.main .section .breadcum .background {
+  background-color: #d6d6d6;
+  height: 6vh;
+  padding: 7px;
+  border-radius: 5px;
+  width: 99%;
+}
+.main .section .breadcum .background ol {
+  list-style: none;
+}
+.main .section .breadcum .background ol li a {
+  text-decoration: none;
+  color: #000000;
+}
+.main .section .content {
+  border: #4c7686 solid 1px;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #ffffff;
+  padding: 5px;
+  height: auto;
+}
+.main .section .content .judul {
+  text-align: center;
+}
+
+.form_add_pasien {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.form_add_pasien .section_one {
+  width: 50%;
+  margin-right: 4%;
+}
+.form_add_pasien .section_two {
+  width: 50%;
+}/*# sourceMappingURL=style.css.map */
