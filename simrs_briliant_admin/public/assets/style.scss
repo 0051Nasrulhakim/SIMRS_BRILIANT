@@ -43,7 +43,9 @@ body{
         width: 17%;
         display: flex;
         flex-direction: column;
-        height: auto;
+        // full halaman
+        // height: auto;
+        height: 100vh;
         color: #ffffff;
         .appname{
             text-align: center;
@@ -53,7 +55,6 @@ body{
             font-weight: bold;
             margin-top: 5%;
             margin-left: 6%;
-
             ul{
                 list-style: none;
                 li{
@@ -99,10 +100,10 @@ body{
             border-top-right-radius: 5px;
             background-color: #ffffff;
             padding: 5px;
-            // height: 83vh;
-            height: auto;
+            height: 90vh;
+            // height: auto;
             // scroll
-            // overflow-y: scroll;
+            overflow-y: scroll;
             .judul{
                 text-align: center;
             }
