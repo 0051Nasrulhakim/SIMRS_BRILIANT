@@ -113,4 +113,14 @@ body {
 }
 .form_add_pasien .section_two {
   width: 50%;
+}
+.form_add_pasien .section_dokter_one {
+  width: 65%;
+}
+.form_add_pasien .section_dokter_two {
+  width: 35%;
+  text-align: center;
+}
+.form_add_pasien .section_dokter_two img {
+  width: 60%;
 }/*# sourceMappingURL=style.css.map */

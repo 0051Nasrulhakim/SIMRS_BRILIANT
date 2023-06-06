@@ -40,7 +40,7 @@ class Dokter extends BaseController
     public function update_dokter(){
 
     }
-    public function add_dokter(){
+    public function simpan_dokter(){
 
     }
     public function delete_dokter(){
