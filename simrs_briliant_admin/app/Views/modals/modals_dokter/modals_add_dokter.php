@@ -1,6 +1,6 @@
 <!-- Tambah Pasien Modal -->
 <div class="modal fade" id="tambahDokter" tabindex="-1" aria-labelledby="tambahDokter" aria-hidden="true">
-    <form action="<?= base_url()?>/dokter/simpan_dokter" method="post">
+    <form action="<?= base_url()?>dokter/simpan_dokter" method="post" class="f_add_dokter" id="f_add_dokter" enctype="multipart/form-data">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
         <div class="modal-header">
@@ -8,7 +8,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" >
-                <div class="form_add_pasien">
+                <div class="form_add_dokter">
                     <div class="section_dokter_one">
                         <div class="mb-3 row">
                             <label for="kode_dokter" class="col-sm-4 col-form-label">Kode Dokter</label>
@@ -35,9 +35,9 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="imgInp" class="col-sm-4 col-form-label">Pilih Foto</label>
+                            <label for="nama_foto" class="col-sm-4 col-form-label">Pilih Foto</label>
                             <div class="col-sm-8">
-                                <input accept="image/*" type='file' id="imgInp" name="foto"/>
+                                <input accept="image/*" type="file" id="nama_foto" name="nama_foto"/>
                                 <!-- pemberitahuan -->
                                 <div class="form-text">*Jika Ingin mengganti gambar silahkan pilih ulang gambar</div>
                             </div>
@@ -57,10 +57,11 @@
     </form>
 </div>
 <script>
-    imgInp.onchange = evt => {
-    const [file] = imgInp.files
+    nama_foto.onchange = evt => {
+        const [file] = nama_foto.files
         if (file) {
             blah.src = URL.createObjectURL(file)
+            console.log(blah.src);
         }
     }
 </script>

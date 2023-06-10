@@ -8,6 +8,6 @@ class M_Dokter extends Model
 {
     protected $table      = 'tb_dokter';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['id','kode_dokter','nama_dokter','no_izin_praktek','spesialis','deleted_at'];
+    protected $allowedFields = ['id','kode_dokter','nama_dokter','no_izin_praktek','nama_foto','spesialis','deleted_at'];
     // soft delete
 }

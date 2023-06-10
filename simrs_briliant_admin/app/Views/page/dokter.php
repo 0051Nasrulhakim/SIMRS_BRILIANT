@@ -5,9 +5,11 @@
         <div class="judul">
             <h4>Daftar Dokter Pasien</h4>
         </div>
+        
         <div class="button" style="margin-left: 1%;">
             <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#tambahDokter">Tambah Dokter</button>
         </div>
+
         <div class="table" style="margin-bottom: 2%;">
             <table id="list_dokter" class="table table-striped">
                 <thead>
@@ -38,6 +40,23 @@
             </table>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+            var session = '<?= session()->getFlashdata('s_add_dokter')?>';
+            if(session){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil',
+                    text: session,
+                })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        <?= session()->remove('s_add_dokter')?>
+                    }
+                })
+            }
+        });
+    </script>              
     <script src="<?= base_url()?>assets/js/dokter/ajax-dokter.js"></script>
     <?= $this->include('modals/modals_dokter/modals_add_dokter') ?>
 <?= $this->include('template/footer') ?>

@@ -122,6 +122,11 @@ body{
     .section_two{
         width: 50%;
     }
+}
+.form_add_dokter{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
     .section_dokter_one{
         width: 65%;
     }

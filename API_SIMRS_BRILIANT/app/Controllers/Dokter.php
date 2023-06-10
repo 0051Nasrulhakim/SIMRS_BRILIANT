@@ -166,5 +166,31 @@ class Dokter extends ResourceController
             }
         }
     }
+    public function delete_dokter(){
+        $signature = $this->request->getHeader('signature');
+        $signature = $signature->getValue();
+        $key = env('KEY');
+        
+        if($signature != $key){
+            $data = [
+                'status' => 'error',
+                'message' => 'Signature tidak valid'
+            ];
+            return $this->respond($data, 401);
+        }else{    
+            $id = $this->request->getVar("id");
+            $data = [
+                'deleted_at' => date('Y-m-d H:i:s')
+            ];
+            $this->Dokter->update($id, $data);
+
+            $data = [
+                'status' => 'success',
+                'message' => 'Data berhasil dihapus'
+            ];
+
+            return $this->respond($data);
+        }
+    }
 
 }
