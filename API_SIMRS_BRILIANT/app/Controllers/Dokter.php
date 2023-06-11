@@ -86,12 +86,13 @@ class Dokter extends ResourceController
             ];
             return $this->respond($data, 401);
         }else{
-            $param = $this->request->getVar('kode_dokter');
+            $param = $this->request->getVar('id');
             $respond = [
                 'status'    => 'success',
                 'message'   => 'Data Ditemukan',
-                'data'      => $this->Dokter->where('kode_dokter', $param)->where('deleted_at', null)->first()
+                'data'      => $this->Dokter->where('id', $param)->where('deleted_at', null)->first()
             ];
+            
             if($respond['data'] == null){
                 $respond = [
                     'status'  => 'error',
