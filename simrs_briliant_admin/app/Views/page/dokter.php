@@ -28,7 +28,7 @@
                         <td><?= $dokter['kode_dokter']?></td>
                         <td><?= $dokter['nama_dokter']?></td>
                         <td><?= $dokter['no_izin_praktek']?></td>
-                        <td>
+                        <td style="text-align: center;">
                             <button class="btn btn-info btn-sm" id="lihat_dokter" onclick="lihat_dokter(<?= $dokter['id']?>)">Lihat</button>
                             <button class="btn btn-warning btn-sm" onclick="ubah_dokter(<?= $dokter['id']?>)">Ubah</button>
                             <button class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?')
