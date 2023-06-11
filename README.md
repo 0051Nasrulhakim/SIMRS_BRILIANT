@@ -1,4 +1,4 @@
-# SIMRS_BRILIANT
+# SIMRS BRILIANT
 aplikasi sistem informasi management rumah sakit framework CI4
 
 plikasi ini masih tahap pengembangan awal. yang di perkirakan akan final project pada bulan november 2023
