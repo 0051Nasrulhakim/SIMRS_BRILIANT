@@ -29,7 +29,6 @@ $(document).ready(function () {
 });
 
 function hapus_dokter(id){
-    alert(id);
     $.ajax({
         url: "http://localhost:1000/dokter/hapus_dokter",
         type: "POST",
