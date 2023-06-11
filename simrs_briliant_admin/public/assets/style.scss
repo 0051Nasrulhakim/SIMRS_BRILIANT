@@ -133,8 +133,15 @@ body{
     .section_dokter_two{
         width: 35%;
         text-align: center;
-        img{
-            width: 60%;
+        .border{
+            border: 1px solid black;
+            height: 200px;
+            margin-left: 4%;
+            margin-right: 4%;
+            img{
+                width: 200px;
+                height: 180px
+            }
         }
     }
 }

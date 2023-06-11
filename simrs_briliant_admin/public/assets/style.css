@@ -127,6 +127,13 @@ body {
   width: 35%;
   text-align: center;
 }
-.form_add_dokter .section_dokter_two img {
-  width: 60%;
+.form_add_dokter .section_dokter_two .border {
+  border: 1px solid black;
+  height: 200px;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+.form_add_dokter .section_dokter_two .border img {
+  width: 200px;
+  height: 180px;
 }/*# sourceMappingURL=style.css.map */

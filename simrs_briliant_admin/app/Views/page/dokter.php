@@ -57,6 +57,7 @@
             }
         });
     </script>              
-    <script src="<?= base_url()?>assets/js/dokter/ajax-dokter.js"></script>
     <?= $this->include('modals/modals_dokter/modals_add_dokter') ?>
+    <?= $this->include('modals/modals_dokter/modals_lihat_dokter') ?>
+    <script src="<?= base_url()?>assets/js/dokter/ajax-dokter.js"></script>
 <?= $this->include('template/footer') ?>

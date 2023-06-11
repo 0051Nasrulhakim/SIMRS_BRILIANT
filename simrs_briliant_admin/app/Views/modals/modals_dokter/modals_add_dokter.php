@@ -44,7 +44,9 @@
                         </div>
                     </div>
                     <div class="section_dokter_two">
-                        <img clas="preview_img_dokter" id="blah" src="#" alt="your image" />
+                        <div class="border">
+                            <img clas="preview_img_dokter" id="blah" src="<?= base_url()?>/assets/img/default.png" alt="your image" />
+                        </div>
                     </div>
                 </div>
             </div>

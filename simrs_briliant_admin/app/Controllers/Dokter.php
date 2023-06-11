@@ -66,6 +66,18 @@ class Dokter extends BaseController
         return redirect()->to(base_url('dokter/list_dokter'));
     }
 
+    public function lihat_dokter(){
+        $respond = $this->curl->request('POST', 'http://localhost:2000/dokter/search_dokter', [
+            'json' => [
+                'id' => $this->request->getPost('id'),
+            ]
+        ]);
+        $status_code = $respond->getStatusCode();
+        $body = $respond->getBody();
+        $data = json_decode($body, true);
+        return json_encode($data['data']);
+    }
+
     public function hapus_dokter(){
         $respond = $this->curl->request('POST', 'http://localhost:2000/dokter/delete_dokter', [
             'json' => [
