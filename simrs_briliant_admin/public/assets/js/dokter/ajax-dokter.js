@@ -63,7 +63,11 @@ function lihat_dokter(id){
             $('#d_nama_dokter').val(data.nama_dokter);
             $('#d_spesialis').val(data.spesialis);
             $('#d_no_izin_praktek').val(data.no_izin_praktek);
-            $('#d_blah').attr('src', 'http://localhost:1000/assets/img/dokter/'+data.nama_foto);
+            if(data.nama_foto == null){
+                $('#d_blah').attr('src', 'http://localhost:1000/assets/img/default.png');
+            }else{
+                $('#d_blah').attr('src', 'http://localhost:1000/assets/img/dokter/'+data.nama_foto);
+            }
         }
     });
 }
