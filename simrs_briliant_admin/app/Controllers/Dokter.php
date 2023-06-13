@@ -39,7 +39,48 @@ class Dokter extends BaseController
         // dd($body);?
     }
     public function update_dokter(){
+        $kode_dokter = $this->request->getPost('kode_dokter');
+        $foto = $this->request->getFile('nama_foto');
 
+        if($foto != null){
+            $nama_foto = $kode_dokter.'-'.$foto->getRandomName();
+            $foto->move('./assets/img/dokter', $nama_foto);
+        
+            $data =[
+                'id'                => $this->request->getPost('id'),
+                'kode_dokter'       => $kode_dokter,
+                'nama_dokter'       => $this->request->getPost('nama_dokter'),
+                'spesialis'         => $this->request->getPost('spesialis'),
+                'no_izin_praktek'   => $this->request->getPost('no_izin_praktek'),
+                'nama_foto'         => $nama_foto
+            ];
+        }else{
+            $data =[
+                'id'                => $this->request->getPost('id'),
+                'kode_dokter'       => $kode_dokter,
+                'nama_dokter'       => $this->request->getPost('nama_dokter'),
+                'spesialis'         => $this->request->getPost('spesialis'),
+                'no_izin_praktek'   => $this->request->getPost('no_izin_praktek'),
+            ];
+        }
+        
+        $respond = $this->curl->request('post', 'http://localhost:2000/dokter/update_dokter', [
+            'json' => $data
+        ]);
+
+        $status_code = $respond->getStatusCode();
+        $body = $respond->getBody();
+        if($status_code == 200){
+            $data = json_decode($body, true);
+            return json_encode($data);
+        }else{
+            $data = json_decode($body, true);
+            $respon = [
+                'status' => $status_code,
+                'message' => $data['message']
+            ];
+            return json_encode($respon);
+        }
     }
     public function simpan_dokter(){
         $kode_dokter = $this->request->getPost('kode_dokter');

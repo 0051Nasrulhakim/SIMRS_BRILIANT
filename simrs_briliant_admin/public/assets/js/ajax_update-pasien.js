@@ -7,7 +7,6 @@ $(document).ready(function(){
             data: $('#update_form').serialize(),
             success: function(respon){
                 var data = JSON.parse(respon);
-                console.log(data);
                 if(data.status != 200){
                     // tampilkan data.message
                     for (var key in data.message) {
