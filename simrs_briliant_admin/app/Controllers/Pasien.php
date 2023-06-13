@@ -104,17 +104,14 @@ class Pasien extends BaseController
             'nama_ayah' => $this->request->getPost('nama_ayah'),
             'tanggal_daftar' => date('Y-m-d'),
         ];
-        // dd($data);
+
         $respond = $this->curl->request('post', 'http://localhost:2000/pasien/update_pasien', [
             'json' => $data
         ]);
         $status_code = $respond->getStatusCode();
-        // dd($status_code);
         $body = $respond->getBody();
-        // dd($body);
         if($status_code == 200){
             $data = json_decode($body, true);
-            
             return json_encode($data);
         }else{
             $data = json_decode($body, true);
