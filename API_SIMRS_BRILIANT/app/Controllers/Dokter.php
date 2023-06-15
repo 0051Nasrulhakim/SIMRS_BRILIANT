@@ -42,6 +42,27 @@ class Dokter extends ResourceController
             return $this->respond($respond);
         }
     }
+    public function get_kodeDokter(){
+        $signature = $this->request->getHeader('signature');
+        $signature = $signature->getValue();
+        $key = env('KEY');
+        
+        if($signature != $key){
+            $data = [
+                'status' => 'error',
+                'message' => 'Signature tidak valid'
+            ];
+            return $this->respond($data, 401);
+        }else{
+            $respond = [
+                'status' => 'success',
+                'message' => 'Data Ditemukan',
+                // select kode dokter dan nama
+                'data' => $this->Dokter->select('kode_dokter, nama_dokter')->where('deleted_at', null)->findAll()
+            ];  
+            return $this->respond($respond);
+        }
+    }
 
     public function add_dokter(){
         $signature = $this->request->getHeader('signature');
@@ -149,7 +170,6 @@ class Dokter extends ResourceController
             ];
             return $this->respond($data, 401);
         }else{
-            $id = $this->request->getVar('id');
             $data = (array)$this->request->getVar();
             if(!$this->validation->run($data, 'add_dokter_rules')){
                 $data = [
@@ -158,7 +178,7 @@ class Dokter extends ResourceController
                 ];
                 return $this->respond($data, 400);
             }else{
-                $this->Dokter->update($id, $data);
+                $this->Dokter->update($data['id'], $data);
                 $respond = [
                     'status' => 'success',
                     'message' => 'Data berhasil diupdate'

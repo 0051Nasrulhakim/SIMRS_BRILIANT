@@ -60,6 +60,7 @@ $routes->group('dokter', static function($routes){
     $routes->post('search_nomor_praktek', 'Dokter::search_nomor_praktek');
     $routes->post('update_dokter', 'Dokter::update_dokter');
     $routes->post('delete_dokter', 'Dokter::delete_dokter');
+    $routes->post('get_kodeDokter', 'Dokter::get_kodeDokter');
 });
 
 // selain post alihkan ke halaman 404

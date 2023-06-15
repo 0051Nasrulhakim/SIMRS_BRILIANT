@@ -305,7 +305,7 @@ class Validation extends BaseConfig
         ],
         'kode_dokter' => [
             // ignore kode poli yang sama
-            'rules' => 'required|is_unique[tb_dokter.kode_dokter,id,{id}]',
+            'rules' => 'required|is_unique[tb_dokter.kode_dokter, id,{id}]',
             'errors' => [
                 'required' => 'Kode Dokter harus diisi',
                 'is_unique' => 'Kode Dokter sudah terdaftar'

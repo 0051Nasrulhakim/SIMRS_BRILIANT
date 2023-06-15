@@ -80,7 +80,21 @@ class Poli extends ResourceController
                 // ambil semua data kecuali deleted_at
                 'status' => 'success',
                 'message' => 'Data Ditemukan',
-                'data' => $this->Poli->where('deleted_at', null)->findAll()
+                // join table dokter
+                'data' => $this->Poli->select(
+                    'tb_poli.uid, 
+                    tb_poli.kode_poli,
+                    tb_poli.mulai_praktek, 
+                    tb_poli.selesai_praktek, 
+                    tb_poli.nama_poli, 
+                    tb_poli.kode_dokter, 
+                    tb_dokter.nama_dokter, 
+                    tb_poli.deleted_at')
+                    ->join(
+                        'tb_dokter', 
+                        'tb_dokter.kode_dokter = tb_poli.kode_dokter'
+                        )
+                    ->where('tb_poli.deleted_at', null)->findAll()
             ];  
             return $this->respond($respond);
         }
