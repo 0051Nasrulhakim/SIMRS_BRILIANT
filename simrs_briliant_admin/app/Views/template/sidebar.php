@@ -18,8 +18,10 @@
                 </div>
                 <div class="content">
                     <ul>
+                        <li><a href="<?= base_url('') ?>">Dashboard</a></li>
                         <li><a href="<?= base_url('pasien/list_pasien') ?>">Pasien</a></li>
                         <li><a href="<?= base_url('dokter/list_dokter') ?>">Dokter</a></li>
+                        <li><a href="<?= base_url('poli/list_poli') ?>">Poli</a></li>
                     </ul>
                 </div>
             </div>

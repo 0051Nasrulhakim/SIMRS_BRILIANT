@@ -11,8 +11,8 @@
                 <div class="alert alert-danger" role="alert" id="alert">
                     Silahkan Klik ubah untuk mengedit data pasien
                 </div>
-                <div class="form_add_pasien">
-                    <div class="section_one">
+                <div class="form_modals">
+                    <div class="section_modals_one">
                         <div class="mb-3 row">
                             <label for="nomor_bpjs" class="col-sm-4 col-form-label">No BPJS</label>
                             <div class="col-sm-8">
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section_two">
+                    <div class="section_modals_two">
                         <div class="mb-3 row">
                             <label for="gol_darah" class="col-sm-4 col-form-label">Gol. Darah</label>
                             <div class="col-sm-8">

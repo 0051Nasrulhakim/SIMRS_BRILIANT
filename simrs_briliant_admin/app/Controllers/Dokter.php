@@ -41,8 +41,8 @@ class Dokter extends BaseController
     public function update_dokter(){
         $kode_dokter = $this->request->getPost('kode_dokter');
         $foto = $this->request->getFile('nama_foto');
-
-        if($foto != null){
+        // jika file tidak ada maka tidak akan di update
+        if($foto->getName() != '' || $foto->getName() != null){
             $nama_foto = $kode_dokter.'-'.$foto->getRandomName();
             $foto->move('./assets/img/dokter', $nama_foto);
         

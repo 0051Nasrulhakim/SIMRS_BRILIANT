@@ -18,30 +18,34 @@
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="kode_dokter" id="d_kode_dokter" required disabled>
                                 <input type="text" class="form-control" name="id" id="d_id" required hidden>
+                                <div id="err_kode_dokter" class="form-text text-danger pesan_error" hidden></div>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="d_nama_dokter" class="col-sm-4 col-form-label">Nama Dokter</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="nama_dokter" id="d_nama_dokter" required disabled>
+                                <div id="err_nama_dokter" class="form-text text-danger pesan_error" hidden></div>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="d_spesialis" class="col-sm-4 col-form-label">Spesialis</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="spesialis" id="d_spesialis" required disabled>
+                                <div id="err_spesialis" class="form-text text-danger pesan_error" hidden></div>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="d_no_izin_praktek" class="col-sm-4 col-form-label">No Izin Praktek</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="no_izin_praktek" id="d_no_izin_praktek" required disabled>
+                                <div id="err_no_izin_praktek" class="form-text text-danger pesan_error" hidden></div>
                             </div>
                         </div>
                         <div class="mb-3 row pilih_foto" id="pilih_foto" hidden>
                             <label for="nama_foto" class="col-sm-4 col-form-label">Pilih Foto</label>
                             <div class="col-sm-8">
-                                <input accept="image/*" type="file" id="d_nama_foto" name="d_nama_foto"/>
+                                <input accept="image/*" type="file" id="d_nama_foto" name="nama_foto"/>
                                 <!-- pemberitahuan -->
                                 <div class="form-text">*Jika Ingin mengganti gambar silahkan pilih ulang gambar</div>
                             </div>
@@ -68,7 +72,6 @@
         const [file] = d_nama_foto.files
         if (file) {
             d_blah.src = URL.createObjectURL(file)
-            console.log(d_blah.src);
         }
     }
 </script>
