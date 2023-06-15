@@ -102,16 +102,16 @@ body {
   text-align: center;
 }
 
-.form_add_pasien {
+.form_modals {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
-.form_add_pasien .section_one {
+.form_modals .section_modals_one {
   width: 50%;
   margin-right: 4%;
 }
-.form_add_pasien .section_two {
+.form_modals .section_modals_two {
   width: 50%;
 }
 

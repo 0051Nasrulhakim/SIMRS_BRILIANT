@@ -1,6 +1,7 @@
 // jadikan padding 0 
 $primary-color: #316B83;
 $sidebar-color: #0f1f25;
+
 body{
     padding: 0;
     background-color: #f8f8f8;
@@ -111,15 +112,15 @@ body{
         }
     }
 }
-.form_add_pasien{
+.form_modals{
     display: flex;
     flex-direction: row;
     width: 100%;
-    .section_one{
+    .section_modals_one{
         width: 50%;
         margin-right: 4%;
     }
-    .section_two{
+    .section_modals_two{
         width: 50%;
     }
 }

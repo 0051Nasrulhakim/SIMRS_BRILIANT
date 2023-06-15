@@ -12,59 +12,25 @@ $(document).ready(function () {
         $('#alert').text('Tekan Tombol Ubah Untuk Mengubah Data Dokter');
         $('#alert').removeClass('alert-success');
         $('#alert').addClass('alert-danger');
-
+        
         $('#d_kode_dokter').attr('disabled', true);
-        $('#d_id').attr('disabled', true);
+        $('#d_nama_foto').val('');
+        $('#d_id').attr('hidden', true);
         $('#d_nama_dokter').attr('disabled', true);
         $('#d_spesialis').attr('disabled', true);
         $('#d_no_izin_praktek').attr('disabled', true);
+        $('#pilih_foto').attr('hidden', true);
         $('#d_blah').attr('src', 'http://localhost:1000/assets/img/default.png');
         $('#btn_ubah').attr('hidden', false);
         $('#btn_simpan').attr('hidden', true);
-        // hapus foto
+        $('.pesan_error').attr('hidden', true).text('');
+        
+        $('#f_update_dokter')[0].reset();
     });
 
     $('#tambahDokter').on('hidden.bs.modal', function () {
         $('#blah').attr('src', 'http://localhost:1000/assets/img/default.png');
-        $('#nama_foto').val('');
     });
-
-    $('#f_update_dokter').submit(function(e){
-        e.preventDefault();
-        $.ajax({
-            url: "http://localhost:1000/dokter/update_dokter",
-            type: 'post',
-            data: $('#f_update_dokter').serialize(),
-            success: function(respon){
-                var data = JSON.parse(respon);
-                if(data.status != 200){
-                    // tampilkan data.message
-                    for (var key in data.message) {
-                        if (data.message.hasOwnProperty(key)) {
-                            $('#err_'+key).attr('hidden', false).text(' *'+data.message[key]);
-                        }
-                    }
-                }
-                if(data.status == 'success'){
-                    $('#lihatDokter').modal('hide', function(){
-                        
-                    });
-                    // alert dengan sweetalert
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Berhasil',
-                        text: 'Data Dokter Berhasil Diubah',
-                        showConfirmButton: true,
-                        // timer: 1500
-                    }).then((result) => {    
-                        if (result.isConfirmed) {
-                            window.location.href = "http://localhost:1000/dokter/list_dokter";
-                        }
-                    })
-                }
-            }
-        })
-    })
 });
 
 function hapus_dokter(id){
@@ -124,6 +90,50 @@ function ubah(){
     $('#btn_simpan').attr('hidden', false);
     $('#btn_tutup').text('Batal');
 }
+
+
+$('#f_update_dokter').submit(function(e){
+    e.preventDefault();
+    $.ajax({
+        url: "http://localhost:1000/dokter/update_dokter",
+        type: 'post',
+        data: new FormData(this),
+        processData: false,
+        contentType: false,
+
+        success: function(respon){
+            var data = JSON.parse(respon);
+            console.log(data);
+            if(data.status != 200){
+                // tampilkan data.message
+                for (var key in data.message) {
+                    if (data.message.hasOwnProperty(key)) {
+                        $('#err_'+key).attr('hidden', false).text(' *'+data.message[key]);
+                    }
+                }
+            }
+            if(data.status == 'success'){
+                $('#lihatDokter').modal('hide', function(){
+                    
+                });
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil',
+                    text: 'Data Dokter Berhasil Diubah',
+                    showConfirmButton: true,
+                    // timer: 1500
+                }).then((result) => {    
+                    if (result.isConfirmed) {
+                        window.location.href = "http://localhost:1000/dokter/list_dokter";
+                    }
+                })
+            }
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+        }
+    })
+})
 
 function ubah_dokter(id){
     $.ajax({
