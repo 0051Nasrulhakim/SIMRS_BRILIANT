@@ -8,6 +8,6 @@ class M_Poli extends Model
 {
     protected $table      = 'tb_poli';
     protected $primaryKey = 'uid';
-    protected $allowedFields = ['uid','kode_poli','nama_poli','mulai_praktek','selesai_praktek','kode_dokter','deleted_at'];
+    protected $allowedFields = ['uid','kode_poli','nama_poli','mulai_praktek','selesai_praktek','kode_dokter','hari','deleted_at'];
     // soft delete
 }

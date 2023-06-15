@@ -46,7 +46,18 @@ class Poli extends BaseController
     }
 
     public function add_poli(){
-
+        $respond = $this->curl->request('post', 'http://localhost:2000/poli/add_poli',[
+            'json' => [
+                'kode_poli' => $this->request->getPost('kode_poli'),
+                'nama_poli' => $this->request->getPost('nama_poli'),
+                'kode_dokter' => $this->request->getPost('kode_dokter'),
+                'hari' => $this->request->getPost('hari'),
+                'jam_mulai' => $this->request->getPost('jam_mulai'),
+                'jam_selesai' => $this->request->getPost('jam_selesai'),
+            ]
+        ]);
+        $body = $respond->getBody();
+        return $body;
     }
 
     public function edit_poli(){

@@ -36,8 +36,7 @@ class Poli extends ResourceController
         }else{
 
             $data = (array)$this->request->getVar();
-            $kode_dokter = $this->request->getVar('kode_dokter');
-            $cek_dokter = $this->Dokter->where('kode_dokter', $kode_dokter)->where('deleted_at', null)->first();
+            $cek_dokter = $this->Dokter->where('kode_dokter', $data['kode_dokter'])->where('deleted_at', null)->first();
 
             if($cek_dokter == null){
                 $respond = [
@@ -88,6 +87,7 @@ class Poli extends ResourceController
                     tb_poli.selesai_praktek, 
                     tb_poli.nama_poli, 
                     tb_poli.kode_dokter, 
+                    tb_poli.hari,
                     tb_dokter.nama_dokter, 
                     tb_poli.deleted_at')
                     ->join(

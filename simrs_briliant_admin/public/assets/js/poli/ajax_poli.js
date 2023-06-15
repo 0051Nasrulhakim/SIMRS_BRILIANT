@@ -8,10 +8,20 @@ $(document).ready(function () {
         order: [[ 0, 'asc' ], [ 1, 'asc' ]],
         buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
     });
+
+    $('#').submit(function(e){
+        e.preventDefault();
+        $.ajax({
+            url: "",
+            type: "",
+            success: function(respon){
+            }
+        })
+    })
+    
 });
 
 function open_modal_add(){
-    
     $.ajax({
         url: "http://localhost:1000/poli/get_kodeDokter",
         type: "POST",

@@ -293,7 +293,14 @@ class Validation extends BaseConfig
             'errors' => [
                 'required' => 'UID Dokter harus diisi',
             ]
+        ],
+        'hari' => [
+            'rules' => 'required',
+            'errors' => [
+                'required' => 'Hari harus diisi',
+            ]
         ]
+        
     ];
 
     public $add_dokter_rules = [
