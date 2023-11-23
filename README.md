@@ -1,4 +1,4 @@
-# SIMRS BRILIANT
+# SIMRS BRILIANT (PENDING PROJECT)
 SIMRS
 aplikasi sistem informasi management rumah sakit framework CI4
 
