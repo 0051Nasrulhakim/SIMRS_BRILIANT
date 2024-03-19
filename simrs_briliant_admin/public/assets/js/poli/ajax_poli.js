@@ -8,7 +8,6 @@ $(document).ready(function () {
         order: [[ 0, 'asc' ], [ 1, 'asc' ]],
         buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
     });
-
     $('#').submit(function(e){
         e.preventDefault();
         $.ajax({
@@ -18,7 +17,7 @@ $(document).ready(function () {
             }
         })
     })
-    
+
 });
 
 function open_modal_add(){
